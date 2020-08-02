@@ -6,7 +6,10 @@ const fileUpload = require('express-fileupload')
 const cors = require('cors');
 const mongoose = require('mongoose');
 const uuid = require('uuid');
+const dotenv = require('dotenv');
 
+
+dotenv.config()
 
 // Importing Models
 
@@ -16,7 +19,7 @@ app.use(cors())
 app.use(fileUpload());
 app.use(express.static('static'))
 
-mongoose.connect('mongodb+srv://dbuser:qBg8xRROddpUfxya@coderkill-3vlzw.mongodb.net/press?retryWrites=true&w=majority',{ useUnifiedTopology: true ,useNewUrlParser: true })
+mongoose.connect(`mongodb+srv://dbuser:${process.env.MONGODB}@coderkill-3vlzw.mongodb.net/press?retryWrites=true&w=majority`,{ useUnifiedTopology: true ,useNewUrlParser: true })
 .then(() => {console.log('Connected to Mongodb Database')})
 .catch(() => { console.log('Error in Connecting') })
 
