@@ -31,7 +31,7 @@ app.post('/upload', function(req, res) {
   var video = req.files.foo;
   var fileName = req.body.fileName;
   // Use the mv() method to place the file somewhere on your server
-  video.mv(__dirname + '/static/uploads/' + fileName + '.mp4' , function(err) {
+  video.mv('static/uploads/' + fileName + '.mp4' , function(err) {
   if(err){
     console.log(err);
   }else{
