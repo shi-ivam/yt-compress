@@ -56,11 +56,11 @@ app.post('/upload', function(req, res) {
           console.log(err)
       })
       .on('progress', progress => {
+        console.log(`Percent complete: ${progress.percentComplete}, ETA: ${progress.eta}`)
         const percent = Math.round(progress.percentComplete);
         if (percent % 2 === 0){
           ProcessedModel.findOneAndUpdate({id:id,processed:percent})
           .then(() => {
-            console.log(`Percent complete: ${progress.percentComplete}, ETA: ${progress.eta}`)
           })
           .catch(err => console.log(err))
         }
