@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,EACI,QAAS,CACT,SAAU,CACV,qBACJ,CAEA,KACI,aACJ","file":"main.e699f9ee.chunk.css","sourcesContent":["*{\r\n    margin: 0;\r\n    padding:0 ;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody{\r\n    padding:100px;\r\n}"]}
